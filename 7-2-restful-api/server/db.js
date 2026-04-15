@@ -7,9 +7,9 @@
  */
 import mongoose from "mongoose";
 
-export async function connectDB(url) {
+export async function connectDB() {
   try {
-    await mongoose.connect(url);
+    await mongoose.connect(process.env.MONGO_URL);
     console.log("[DB] Mongo connected");
   } catch (err) {
     console.error("Connection error:", err.message);
