@@ -1,16 +1,11 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-
-// import dotenv and load environment variables from .env
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-dotenv.config({ path: path.join(__dirname, ".env") });
-
-
 import { connectDB } from "./db.js";
 import { Song } from "./models/song.model.js";
+
+// import dotenv and load environment variables from .env
+dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5174;
